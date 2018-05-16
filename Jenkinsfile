@@ -26,7 +26,7 @@ pipeline {
             steps
             {
                 
-                sh 'docker pull httpd'
+                sh 'sudo docker pull httpd'
 		sh 'sudo docker build /var/lib/jenkins/workspace/PIPELINE/'
                         
                 
