@@ -25,8 +25,7 @@ pipeline {
     	    steps {
 		        sh '''
 			        sudo docker build -t demo .
-	                sudo docker run -p 8081:8585 demo
-		        '''
+	                   '''
 	        }
 	}
 		stage ('Docker push') {
