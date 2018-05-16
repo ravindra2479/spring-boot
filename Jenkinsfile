@@ -32,7 +32,7 @@ pipeline  {
             steps {
 		    
                 sudo docker.withRegistry('https://288357198731.dkr.ecr.us-east-1.amazonaws.com/ravindra', 'ecr:us-east-1:ECR-credentials') {
-                sudo docker.image('ravindra').push('latest')
+                docker.image('ravindra').push('latest')
 	        
             }
 	}
