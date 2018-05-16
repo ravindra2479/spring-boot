@@ -23,7 +23,7 @@ pipeline  {
 	stage ('Docker build') {
     	    steps {
 		        sh '''
-			        sudo docker build -t ravindra/demo:latest .
+			        sudo docker build -t ravindra:latest .
 	              
 		        '''
 	        }
@@ -32,7 +32,7 @@ pipeline  {
             steps {
 		    
                 sudo docker.withRegistry('https://288357198731.dkr.ecr.us-east-1.amazonaws.com/ravindra', 'ecr:us-east-1:ECR-credentials') {
-                sudo docker.image('ravindra/demo').push('latest')
+                sudo docker.image('ravindra').push('latest')
 	        
             }
 	}
