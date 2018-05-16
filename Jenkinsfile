@@ -25,12 +25,11 @@ pipeline {
         {
             steps
             {
-                scrips
-                {
-			"docker pull httpd"
-			"sudo docker build /var/lib/jenkins/workspace/PIPELINE/"
+                
+                sh 'docker pull httpd'
+		sh 'sudo docker build /var/lib/jenkins/workspace/PIPELINE/'
                         
-                }
+                
             }
         }
     }
