@@ -31,7 +31,7 @@ pipeline {
 		stage ('Docker push') {
             steps {
 		    sh '''
-                docker.withRegistry('https://288357198731.dkr.ecr.us-east-1.amazonaws.com/ravindra', 'ecr:us-east-1:ECR-credentials') {
+                docker.withRegistry("https://288357198731.dkr.ecr.us-east-1.amazonaws.com/ravindra", "ecr:us-east-1:ECR-credentials") {
                 docker.image('demo').push('latest')
 		'''
             }
