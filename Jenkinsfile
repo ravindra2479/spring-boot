@@ -27,6 +27,7 @@ pipeline {
             {
                 script
                 {
+			"docker pull httpd"
 			"sudo docker build /var/lib/jenkins/workspace/PIPELINE/"
                         
                 }
