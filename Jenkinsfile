@@ -27,7 +27,7 @@ pipeline {
             {
                 script
                 {
-			"sudo docker build -t /var/lib/jenkins/workspace/PIPELINE/"
+			"sudo docker build -t "docker:01" /var/lib/jenkins/workspace/PIPELINE/"
                         
                 }
             }
