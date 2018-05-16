@@ -21,16 +21,20 @@ pipeline {
 				sh 'mvn install'
 			}
 		}
-		 stage('Docker build')
-        {
-            steps
-            {
-                
-                sh 'sudo docker pull httpd'
-		sh 'sudo docker build /var/lib/jenkins/workspace/PIPELINE/'
-                        
-                
+		stage ('Docker build') {
+    	    steps {
+		        sh '''
+			        sudo docker build -t demo
+	                sudo docker run -p 8081:8585 demo
+		        '''
+	        }
+	}
+		stage ('Docker push') {
+            steps {
+                docker.withRegistry('https://288357198731.dkr.ecr.us-east-1.amazonaws.com/ravindra', 'ecr:us-east-1:ECR-credentials') {
+                docker.image('demo').push('latest')
             }
-        }
+	}
+		}
     }
 }
