@@ -30,8 +30,10 @@ pipeline  {
 	}
 		stage ('Docker push') {
             steps {
+		    sh '''
                 sudo docker.withRegistry('https://288357198731.dkr.ecr.us-east-1.amazonaws.com/ravindra', 'ecr:us-east-1:ECR-credentials') {
-                sudo docker.push('demo').image('latest')
+                sudo docker.image('demo').push('latest')
+		'''
             }
 	}
 		}
